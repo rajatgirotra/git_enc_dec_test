@@ -1,1 +1,3 @@
 LICENSE filter=gpg
+secret.txt filter=gpg diff=gpg
+.gitattributes !filter !diff
