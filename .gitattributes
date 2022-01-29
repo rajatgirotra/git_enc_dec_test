@@ -1,0 +1,2 @@
+.gitattributes !filter !diff
+secret.txt filter=gpg diff=gpg
