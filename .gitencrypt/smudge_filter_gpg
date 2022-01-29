@@ -1,12 +1,3 @@
 #!/bin/bash
 
-SCRIPT_DIR=$(readlink -e $(dirname ${BASH_SOURCE[0]}))
-
-if gpg --yes --batch --passphrase-file ${SCRIPT_DIR}/pass_file --list-packets $1 > /dev/null 2>&1
-then
-  gpg --yes --batch --passphrase-file ${SCRIPT_DIR}/pass_file --decrypt 2> /dev/null
-else
-  cat
-fi
-
-
+gpg --yes --batch --passphrase-file ${TETAPAC_PASSPHRASE} --decrypt > /dev/null 2>&1 || cat
