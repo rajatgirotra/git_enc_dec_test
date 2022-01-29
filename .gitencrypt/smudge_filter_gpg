@@ -1,5 +1,5 @@
 #!/bin/bash
 
-# gpg --batch --yes --passph
-echo "smudge filter installed \"$@\""
+SCRIPT_DIR=$(readlink -e $(dirname ${BASH_SOURCE[0]}))
 
+gpg --yes --batch --passphrase-file ${SCRIPT_DIR}/pass_file --decrypt 2> /dev/null || cat
