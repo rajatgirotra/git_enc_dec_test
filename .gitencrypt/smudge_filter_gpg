@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# gpg --batch --yes --passph
+echo "smudge filter installed \"$@\""
+
