@@ -2,7 +2,11 @@
 
 SCRIPT_DIR=$(readlink -e $(dirname ${BASH_SOURCE[0]}))
 
-#  if gpg --yes --batch --passphrase-file ${SCRIPT_DIR}/pass_file --list-packets $1
+if gpg --yes --batch --passphrase-file ${SCRIPT_DIR}/pass_file --list-packets $1 > /dev/null 2>&1
+then
+ cat
+fi
+
 gpg --yes --batch --passphrase-file ${SCRIPT_DIR}/pass_file --symmetric  --cipher-algo AES256
 #echo "clean filter installed"
 
